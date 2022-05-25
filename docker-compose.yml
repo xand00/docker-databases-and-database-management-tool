@@ -11,12 +11,7 @@ services:
     networks:
       - default
   postgres:
-    build:
-      context: dockerfiles/postgres
-      dockerfile: Dockerfile
-      args:
-        - UID=${UID}
-        - GID=${GID}
+    image: postgres:14.2-alpine3.15
     restart: unless-stopped
     ports:
       - ${POSTGRES_PORT}:5432
